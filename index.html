@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TORA · Menu</title>
+<meta name="description" content="Tora Sushi 菜單(義/英原文 + 中文翻譯)">
+<style>
+  :root{
+    --bg:#0a0a0a; --fg:#f2f2f2; --it:#eaeaea; --en:#9a9a9a; --zh:#c9a46a;
+    --line:#2a2a2a; --price:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:-apple-system,"Helvetica Neue","PingFang TC","Noto Sans TC",Arial,sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+    padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:2rem 1.3rem 4rem}
+
+  header.top{padding:1rem 0 2rem; border-bottom:1px solid var(--line); margin-bottom:1.5rem}
+  header.top .brand{font-size:2rem; font-weight:700; letter-spacing:.06em}
+  header.top .sub{font-size:.85rem; letter-spacing:.24em; color:var(--en); text-transform:uppercase; margin-top:.3rem}
+  header.top .note{font-size:.78rem; color:var(--en); margin-top:.7rem}
+
+  section{margin:2.4rem 0 0}
+  .sec-head{border-bottom:1px solid var(--line); padding-bottom:.5rem; margin-bottom:1.3rem}
+  .sec-head .s-main{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap}
+  .sec-head .s-it{font-size:1.35rem; font-weight:600; letter-spacing:.02em}
+  .sec-head .s-en{font-size:1.05rem; color:var(--en); letter-spacing:.03em}
+  .sec-head .s-zh{font-size:.9rem; color:var(--zh); margin-top:.25rem}
+
+  .items{display:flex; flex-direction:column; gap:1.5rem}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 2rem}
+  @media(max-width:560px){ .grid2{grid-template-columns:1fr} }
+
+  .item .row{display:flex; align-items:baseline; justify-content:space-between; gap:.8rem}
+  .item .name{font-size:1.06rem; font-weight:600; letter-spacing:.02em}
+  .item .price{font-size:1.02rem; font-weight:600; color:var(--price); white-space:nowrap}
+  .item .it{color:var(--it); font-size:.92rem; margin-top:.25rem}
+  .item .en{color:var(--en); font-size:.88rem; font-style:italic; margin-top:.15rem}
+  .item .zh{color:var(--zh); font-size:.9rem; margin-top:.25rem}
+
+  footer{margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--line); color:var(--en); font-size:.78rem; text-align:center; line-height:1.8}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">TORA</div>
+    <div class="sub">Sushi &amp; Asian Cuisine</div>
+    <div class="note">原菜單(義大利文／英文)＋中文翻譯 · 非官方,僅供參考</div>
+  </header>
+  <main id="menu"></main>
+  <footer>
+    Tora Sushi Restaurant · Menu<br>
+    中文為翻譯參考,實際餐點/價格以店家為準
+  </footer>
+</div>
+
+<script>
+const MENU = [
+ {it:"ROLL CREATIVI", en:"Creative Rolls", zh:"創意捲(8 件 / 8 pezzi)", cols:1, items:[
+   {name:"ESPLOSIONE", price:"20€",
+    it:"Hosomaki avvolto con pasta kataifi con avocado, salmone, cipolla rossa in agrodolce, top di gamberi fritti conditi con salsa piccante, tobiko e scaglie di mandorle",
+    en:"Hosomaki wrapped with kataifi paste with avocado, salmon, sweet and sour red onion, topped with fried prawns with hot sauce, tobiko and almond scales",
+    zh:"細捲外裹 kataifi 酥絲,內含酪梨、鮭魚、糖醋紅洋蔥;上放辣醬炸蝦、飛魚卵與杏仁片"},
+   {name:"VULCANO", price:"20€",
+    it:"Uramaki con salmone cotto, condito con salsa shiracha e avocado, avvolto con salmone affumicato, top di formaggio fresco e julienne fritta di patate",
+    en:"Uramaki with cooked salmon, with shiracha sauce and avocado, wrapped with smoked salmon, topped with cream cheese and fried shredded potatoes",
+    zh:"加州捲(熟鮭魚)佐是拉差醬與酪梨,外層包煙燻鮭魚;上放奶油乳酪與炸馬鈴薯絲"},
+   {name:"YUME-SOGNO", price:"20€",
+    it:"Uramaki con gamberi, avvolto con fiore di zucca in tempura, top di tartare di salmone allo yuzu e chips di fiore di zucca",
+    en:"Uramaki with prawns, wrapped with zucchini flowers in tempura, topped with yuzu and zucchini flower chips",
+    zh:"鮮蝦加州捲,外裹天婦羅櫛瓜花;上放柚子鮭魚塔塔與櫛瓜花脆片"},
+   {name:"GODFATHER", price:"22€",
+    it:"Uramaki con tonno piccante e avocado in crosta di pistacchio, top di tartare di tonno con salsa piccante",
+    en:"Uramaki with spicy tuna and pistachio crust and avocado, topped with tuna tartare with spicy sauce",
+    zh:"辣鮪魚酪梨加州捲裹開心果脆殼;上放辣味鮪魚塔塔"},
+   {name:"LOBSTER", price:"38€",
+    it:"Uramaki con polpa di astice, avocado, mango e cetrioli, avvolto con astice, avocado, fiore di zucca, top con scaglie di tartufo nero e maionese allo yuzu",
+    en:"Uramaki with lobster, avocado, mango and cucumbers, wrapped with lobster, avocado, zucchini flowers, topped with scales of black truffle and a yuzu mayo",
+    zh:"龍蝦肉、酪梨、芒果、小黃瓜加州捲,外包龍蝦與酪梨、櫛瓜花;上放黑松露片與柚子美乃滋"},
+ ]},
+ {it:"TARTARE E CARPACCIO", en:"Tartare & Carpaccio", zh:"塔塔與生薄片", cols:1, items:[
+   {name:"SHAKE TARTARE", price:"15€",
+    it:"Tartare di salmone leggermente scottato con crema di avocado e ikura",
+    en:"Flame-seared salmon tartare with avocado cream and ikura (salmon roe)",
+    zh:"微炙鮭魚塔塔,佐酪梨醬與鮭魚卵(ikura)"},
+   {name:"MAGURO TARTARE", price:"16€",
+    it:"Tartare di tonno al profumo di cumino, servita con crema di ceci e Papadum chips indiane",
+    en:"Tuna tartare with a scent of mint and cumin, served with chickpea cream and Indian Papadum chips",
+    zh:"孜然香氣鮪魚塔塔(英文版另註薄荷),佐鷹嘴豆泥與印度 Papadum 脆餅"},
+   {name:"AMA-EBI", price:"22€",
+    it:"Carpaccio di gamberi rossi marinati con frutto della passione, crema di avocado e caviale nero",
+    en:"Red shrimp carpaccio marinated with passion fruit, avocado cream and black caviar",
+    zh:"紅蝦生薄片以百香果醃漬,佐酪梨醬與黑魚子醬"},
+   {name:"KING OF CARPACCIO", price:"27€",
+    it:"Carpaccio di salmone, tonno, spigola, capesante e gamberi rossi con salsa ponzu leggermente piccante",
+    en:"Carpaccio of salmon, tuna, seabass, scallops and red shrimps with a slightly spicy ponzu sauce",
+    zh:"鮭魚、鮪魚、鱸魚、干貝與紅蝦生薄片,佐微辣柚子醋醬(ponzu)"},
+ ]},
+ {it:"CARNE", en:"Meat", zh:"肉類", cols:1, items:[
+   {name:"TORA CHICKEN", price:"17€",
+    it:"Pollo teriyaki cotto al forno, marinato con zenzero, anice stellato e salsa di soia",
+    en:"Oven baked teriyaki chicken, marinated with ginger, star anise and soy sauce",
+    zh:"爐烤照燒雞,以薑、八角與醬油醃製"},
+   {name:"THAI ANGRY BIRD", price:"18€",
+    it:"Pollo al curry verde tailandese, servito con riso al vapore",
+    en:"Thai green chicken Curry, served with steamed rice",
+    zh:"泰式綠咖哩雞,附白飯(蒸飯)"},
+   {name:"TORI KATSU PLUS", price:"18€",
+    it:"Pollo in crosta di panko con salsa al curry, servito con riso bianco",
+    en:"Panko crust chicken with curry sauce, served with white rice",
+    zh:"麵包粉酥炸雞排佐咖哩醬,附白飯"},
+   {name:"ENERGY BEEF", price:"22€",
+    it:"Tagliata di filetto di manzo con verdure, saltato al wok con salsa di fagioli neri e peperoncino cinese Tobanjan",
+    en:"Beef fillet stir fried with vegetables, black bean sauce and Chinese Tobanjan chili",
+    zh:"牛菲力切片炒時蔬,以豆豉醬與中式豆瓣辣椒大火快炒"},
+ ]},
+ {it:"TEMAKI", en:"Temaki", zh:"手捲", cols:2, items:[
+   {name:"SALMONE E AVOCADO", price:"8€", en:"Salmon and avocado", zh:"鮭魚酪梨"},
+   {name:"TONNO PICCANTE", price:"9€", en:"Spicy Tuna", zh:"辣鮪魚"},
+   {name:"TONNO E AVOCADO", price:"9€", en:"Tuna and avocado", zh:"鮪魚酪梨"},
+   {name:"TEMPURA", price:"8€", it:"Tempura di gamberi, maionese e salsa teriyaki", en:"Shrimp tempura, mayo & teriyaki sauce", zh:"天婦羅炸蝦、美乃滋與照燒醬"},
+   {name:"CALIFORNIA", price:"7€", zh:"加州手捲"},
+   {name:"SALMONE PICCANTE", price:"8€", en:"Salmon Spicy", zh:"辣鮭魚"},
+   {name:"ANGUILLA E CETRIOLI", price:"9€", en:"Eel and cucumber", zh:"鰻魚小黃瓜"},
+ ]},
+ {it:"SASHIMI", en:"Sashimi", zh:"生魚片(5 件 / 5 pezzi)", cols:2, items:[
+   {name:"IKA", price:"7€", it:"Calamaro", en:"Squid", zh:"花枝 / 魷魚"},
+   {name:"TORO", price:"13€", it:"Ventresca di tonno", en:"Bluefin tuna belly", zh:"黑鮪魚腹(大腹)"},
+   {name:"SHAKE", price:"9€", it:"Salmone", en:"Salmon", zh:"鮭魚"},
+   {name:"AKA EBI", price:"15€", it:"Gambero Rosso crudo", en:"Raw red shrimp", zh:"生紅蝦"},
+   {name:"SUZUKI", price:"8€", it:"Spigola", en:"Sea bass", zh:"鱸魚"},
+   {name:"HAMACHI", price:"14€", it:"Ricciola", en:"Yellowtail", zh:"鰤魚(青甘)"},
+   {name:"MAGURO", price:"12€", it:"Tonno", en:"Tuna", zh:"鮪魚"},
+   {name:"MISTO (12 PEZZI)", price:"30€", it:"Sashimi misto", en:"Assorted sashimi", zh:"綜合生魚片(12 件)"},
+ ]},
+];
+
+function itemHTML(x){
+  return `<div class="item">
+    <div class="row"><span class="name">${x.name}</span><span class="price">${x.price}</span></div>
+    ${x.it?`<div class="it">${x.it}</div>`:""}
+    ${x.en?`<div class="en">${x.en}</div>`:""}
+    ${x.zh?`<div class="zh">${x.zh}</div>`:""}
+  </div>`;
+}
+document.getElementById("menu").innerHTML = MENU.map(sec=>`
+  <section>
+    <div class="sec-head">
+      <div class="s-main"><span class="s-it">${sec.it}</span><span class="s-en">${sec.en}</span></div>
+      ${sec.zh?`<div class="s-zh">${sec.zh}</div>`:""}
+    </div>
+    <div class="${sec.cols===2?"grid2":"items"}">${sec.items.map(itemHTML).join("")}</div>
+  </section>`).join("");
+</script>
+</body>
+</html>
