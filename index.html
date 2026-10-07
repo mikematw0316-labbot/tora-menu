@@ -4,47 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TORA · Menu</title>
-<meta name="description" content="Tora Sushi 菜單(義/英原文 + 中文翻譯)">
+<meta name="description" content="Tora Sushi 菜單(義大利文 / 英文 / 中文)">
 <style>
   :root{
-    --bg:#0a0a0a; --fg:#f2f2f2; --it:#eaeaea; --en:#9a9a9a; --zh:#c9a46a;
-    --line:#2a2a2a; --price:#ffffff;
+    --bg:#0a0a0a; --fg:#f2f2f2; --it:#eaeaea; --en:#d98a8a; --zh:#c9a46a;
+    --line:#2a2a2a; --price:#ffffff; --lab:#b98a5e;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--bg); color:var(--fg);
+  body{background:var(--bg); color:var(--fg);
     font-family:-apple-system,"Helvetica Neue","PingFang TC","Noto Sans TC",Arial,sans-serif;
     line-height:1.5; -webkit-font-smoothing:antialiased;
-    padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
-  }
+    padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
   .wrap{max-width:720px; margin:0 auto; padding:2rem 1.3rem 4rem}
 
-  header.top{padding:1rem 0 2rem; border-bottom:1px solid var(--line); margin-bottom:1.5rem}
-  header.top .brand{font-size:2rem; font-weight:700; letter-spacing:.06em}
-  header.top .sub{font-size:.85rem; letter-spacing:.24em; color:var(--en); text-transform:uppercase; margin-top:.3rem}
-  header.top .note{font-size:.78rem; color:var(--en); margin-top:.7rem}
+  header.top{padding:1rem 0 2rem; border-bottom:1px solid var(--line); margin-bottom:1rem; text-align:center}
+  header.top .brand{font-size:2.4rem; font-weight:700; letter-spacing:.1em}
+  header.top .sub{font-size:.8rem; letter-spacing:.26em; color:#9a9a9a; text-transform:uppercase; margin-top:.4rem}
+  header.top .langs{font-size:.74rem; color:var(--lab); margin-top:.6rem; letter-spacing:.08em}
 
-  section{margin:2.4rem 0 0}
-  .sec-head{border-bottom:1px solid var(--line); padding-bottom:.5rem; margin-bottom:1.3rem}
+  .toc{display:flex; flex-wrap:wrap; gap:.4rem; justify-content:center; margin:1.2rem 0 .5rem}
+  .toc a{font-size:.72rem; color:#bbb; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:.2rem .6rem}
+  .toc a:active{background:#1a1a1a}
+
+  section{margin:2.2rem 0 0; scroll-margin-top:1rem}
+  .sec-head{border-bottom:1px solid var(--line); padding-bottom:.5rem; margin-bottom:1.2rem}
   .sec-head .s-main{display:flex; align-items:baseline; justify-content:space-between; gap:1rem; flex-wrap:wrap}
-  .sec-head .s-it{font-size:1.35rem; font-weight:600; letter-spacing:.02em}
-  .sec-head .s-en{font-size:1.05rem; color:var(--en); letter-spacing:.03em}
-  .sec-head .s-zh{font-size:.9rem; color:var(--zh); margin-top:.25rem}
+  .sec-head .s-it{font-size:1.3rem; font-weight:700; letter-spacing:.03em}
+  .sec-head .s-en{font-size:1rem; color:#9a9a9a; letter-spacing:.04em; text-transform:uppercase}
+  .sec-head .s-zh{font-size:.88rem; color:var(--zh); margin-top:.25rem}
 
-  .items{display:flex; flex-direction:column; gap:1.5rem}
-  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:1.5rem 2rem}
-  @media(max-width:560px){ .grid2{grid-template-columns:1fr} }
-
+  .items{display:flex; flex-direction:column; gap:1.25rem}
   .item .row{display:flex; align-items:baseline; justify-content:space-between; gap:.8rem}
-  .item .name{font-size:1.06rem; font-weight:600; letter-spacing:.02em}
-  .item .price{font-size:1.02rem; font-weight:600; color:var(--price); white-space:nowrap}
-  .item .ln{display:flex; gap:.5rem; margin-top:.22rem}
-  .item .lang{flex:0 0 auto; width:1.5rem; font-size:.6rem; font-weight:700; letter-spacing:.05em; color:var(--zh); padding-top:.18rem; text-align:right}
-  .item .it{color:var(--it); font-size:.92rem}
-  .item .en{color:var(--en); font-size:.88rem; font-style:italic}
+  .item .name{font-size:1.05rem; font-weight:600; letter-spacing:.02em}
+  .item .price{font-size:1.0rem; font-weight:600; color:var(--price); white-space:nowrap}
+  .item .ln{display:flex; gap:.5rem; margin-top:.2rem}
+  .item .lang{flex:0 0 auto; width:1.5rem; font-size:.58rem; font-weight:700; letter-spacing:.04em; color:var(--lab); padding-top:.2rem; text-align:right}
+  .item .it{color:var(--it); font-size:.9rem}
+  .item .en{color:var(--en); font-size:.86rem; font-style:italic}
   .item .zh{color:var(--zh); font-size:.9rem}
 
-  footer{margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--line); color:var(--en); font-size:.78rem; text-align:center; line-height:1.8}
+  footer{margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--line); color:#8a8a8a; font-size:.78rem; text-align:center; line-height:1.9}
 </style>
 </head>
 <body>
@@ -52,92 +51,235 @@
   <header class="top">
     <div class="brand">TORA</div>
     <div class="sub">Sushi &amp; Asian Cuisine</div>
+    <div class="langs">ITALIANO · ENGLISH · 中文</div>
+    <nav class="toc" id="toc"></nav>
   </header>
   <main id="menu"></main>
-  <footer>
-    Tora Sushi Restaurant · Menu<br>
-    中文為翻譯參考,實際餐點/價格以店家為準
-  </footer>
+  <footer>Tora Sushi · Menu · 義大利文 / 英文 / 中文<br>實際餐點與價格以店家為準</footer>
 </div>
 
 <script>
-const MENU = [
- {it:"ROLL CREATIVI", en:"Creative Rolls", zh:"創意捲(8 件 / 8 pezzi)", cols:1, items:[
-   {name:"ESPLOSIONE", price:"20€",
-    it:"Hosomaki avvolto con pasta kataifi con avocado, salmone, cipolla rossa in agrodolce, top di gamberi fritti conditi con salsa piccante, tobiko e scaglie di mandorle",
-    en:"Hosomaki wrapped with kataifi paste with avocado, salmon, sweet and sour red onion, topped with fried prawns with hot sauce, tobiko and almond scales",
-    zh:"細捲外裹 kataifi 酥絲,內含酪梨、鮭魚、糖醋紅洋蔥;上放辣醬炸蝦、飛魚卵與杏仁片"},
-   {name:"VULCANO", price:"20€",
-    it:"Uramaki con salmone cotto, condito con salsa shiracha e avocado, avvolto con salmone affumicato, top di formaggio fresco e julienne fritta di patate",
-    en:"Uramaki with cooked salmon, with shiracha sauce and avocado, wrapped with smoked salmon, topped with cream cheese and fried shredded potatoes",
-    zh:"加州捲(熟鮭魚)佐是拉差醬與酪梨,外層包煙燻鮭魚;上放奶油乳酪與炸馬鈴薯絲"},
-   {name:"YUME-SOGNO", price:"20€",
-    it:"Uramaki con gamberi, avvolto con fiore di zucca in tempura, top di tartare di salmone allo yuzu e chips di fiore di zucca",
-    en:"Uramaki with prawns, wrapped with zucchini flowers in tempura, topped with yuzu and zucchini flower chips",
-    zh:"鮮蝦加州捲,外裹天婦羅櫛瓜花;上放柚子鮭魚塔塔與櫛瓜花脆片"},
-   {name:"GODFATHER", price:"22€",
-    it:"Uramaki con tonno piccante e avocado in crosta di pistacchio, top di tartare di tonno con salsa piccante",
-    en:"Uramaki with spicy tuna and pistachio crust and avocado, topped with tuna tartare with spicy sauce",
-    zh:"辣鮪魚酪梨加州捲裹開心果脆殼;上放辣味鮪魚塔塔"},
-   {name:"LOBSTER", price:"38€",
-    it:"Uramaki con polpa di astice, avocado, mango e cetrioli, avvolto con astice, avocado, fiore di zucca, top con scaglie di tartufo nero e maionese allo yuzu",
-    en:"Uramaki with lobster, avocado, mango and cucumbers, wrapped with lobster, avocado, zucchini flowers, topped with scales of black truffle and a yuzu mayo",
-    zh:"龍蝦肉、酪梨、芒果、小黃瓜加州捲,外包龍蝦與酪梨、櫛瓜花;上放黑松露片與柚子美乃滋"},
+const MENU=[
+ {id:"antipasti", it:"Antipasti", en:"Appetizers", zh:"前菜 · 開胃菜", items:[
+  {name:"Edamame", price:"€6", it:"Fagioli di soia", en:"Young soybeans", zh:"日式毛豆"},
+  {name:"Wakame", price:"€6", it:"Insalata di alghe wakame con sesamo e salsa vinaigrette giapponese", en:"Seaweed wakame salad with a Japanese sesame vinaigrette sauce", zh:"海帶芽沙拉,佐日式芝麻油醋醬"},
+  {name:"Takoyaki Plus", price:"€12", it:"Polpette di polpo stile Osaka servite con formaggio filante, maionese e salsa agrodolce otafuku", en:"Traditional Osaka octopus croquets served with melted cheese, mayonnaise and a sweet and sour otafuku sauce", zh:"大阪章魚燒,佐融化起司、美乃滋與甜酸 otafuku 醬"},
+  {name:"Gyoza Tori (5pz)", price:"€12", it:"Ravioli giapponesi alla piastra con pollo, serviti con salsa ponzu all'olio di sesamo", en:"Japanese chicken dumplings, served with a sesame oil ponzu sauce", zh:"日式香煎雞肉餃,佐芝麻油柚子醋醬"},
+  {name:"Gyoza Ebi (5pz)", price:"€14", it:"Ravioli giapponesi alla piastra con gamberi, serviti con salsa ponzu", en:"Japanese shrimp dumplings, served with a ponzu sauce", zh:"日式香煎鮮蝦餃,佐柚子醋醬"},
+  {name:"Ebi Dynamite 🌶", price:"€15", it:"Gamberoni fritti conditi con salsa piccante e serviti su nuvolette di gamberi", en:"Fried prawns in spicy sauce, served on shrimp chips", zh:"炸大蝦佐辣醬,鋪在蝦餅上"},
+  {name:"Misto Gyoza (6pz)", price:"€16", it:"Assortimento misto di ravioli giapponesi alla piastra con pollo e gamberi, serviti con salsa ponzu", en:"Assortment of japanese chicken and shrimp dumplings, served with ponzu sauce", zh:"綜合香煎餃(雞肉+鮮蝦),佐柚子醋醬"},
  ]},
- {it:"TARTARE E CARPACCIO", en:"Tartare & Carpaccio", zh:"塔塔與生薄片", cols:1, items:[
-   {name:"SHAKE TARTARE", price:"15€",
-    it:"Tartare di salmone leggermente scottato con crema di avocado e ikura",
-    en:"Flame-seared salmon tartare with avocado cream and ikura (salmon roe)",
-    zh:"微炙鮭魚塔塔,佐酪梨醬與鮭魚卵(ikura)"},
-   {name:"MAGURO TARTARE", price:"16€",
-    it:"Tartare di tonno al profumo di cumino, servita con crema di ceci e Papadum chips indiane",
-    en:"Tuna tartare with a scent of mint and cumin, served with chickpea cream and Indian Papadum chips",
-    zh:"孜然香氣鮪魚塔塔(英文版另註薄荷),佐鷹嘴豆泥與印度 Papadum 脆餅"},
-   {name:"AMA-EBI", price:"22€",
-    it:"Carpaccio di gamberi rossi marinati con frutto della passione, crema di avocado e caviale nero",
-    en:"Red shrimp carpaccio marinated with passion fruit, avocado cream and black caviar",
-    zh:"紅蝦生薄片以百香果醃漬,佐酪梨醬與黑魚子醬"},
-   {name:"KING OF CARPACCIO", price:"27€",
-    it:"Carpaccio di salmone, tonno, spigola, capesante e gamberi rossi con salsa ponzu leggermente piccante",
-    en:"Carpaccio of salmon, tuna, seabass, scallops and red shrimps with a slightly spicy ponzu sauce",
-    zh:"鮭魚、鮪魚、鱸魚、干貝與紅蝦生薄片,佐微辣柚子醋醬(ponzu)"},
+ {id:"carpaccio", it:"Carpaccio e Tartare", en:"Carpaccio & Tartare", zh:"生薄片與塔塔", items:[
+  {name:"Shake Tartare", price:"€15", it:"Tartare di salmone leggermente scottata con crema di avocado e ikura (uova di salmone)", en:"Flame-seared salmon tartare with ikura (salmon roe) and avocado cream", zh:"微炙鮭魚塔塔,佐酪梨醬與鮭魚卵"},
+  {name:"Maguro Tartare", price:"€16", it:"Tartare di tonno al profumo di cumino, servita con papadum chips indiane", en:"Tuna tartare with a scent of cumin, served with Indian Papadum chips", zh:"孜然香氣鮪魚塔塔,佐印度 Papadum 脆餅"},
+  {name:"Ama-Ebi", price:"€22", it:"Carpaccio di gamberi rossi, crema di avocado e caviale nero", en:"Red shrimp carpaccio, avocado cream and black caviar", zh:"紅蝦薄片,佐酪梨醬與黑魚子醬"},
+  {name:"King of Carpaccio", price:"€27", it:"Carpaccio di salmone, tonno, spigola, capesante e gamberi rossi con salsa ponzu leggermente piccante", en:"Carpaccio of salmon, tuna, seabass, scallops, red shrimp with a slightly spicy ponzu sauce", zh:"鮭魚、鮪魚、鱸魚、干貝與紅蝦薄片,佐微辣柚子醋醬"},
  ]},
- {it:"CARNE", en:"Meat", zh:"肉類", cols:1, items:[
-   {name:"TORA CHICKEN", price:"17€",
-    it:"Pollo teriyaki cotto al forno, marinato con zenzero, anice stellato e salsa di soia",
-    en:"Oven baked teriyaki chicken, marinated with ginger, star anise and soy sauce",
-    zh:"爐烤照燒雞,以薑、八角與醬油醃製"},
-   {name:"THAI ANGRY BIRD", price:"18€",
-    it:"Pollo al curry verde tailandese, servito con riso al vapore",
-    en:"Thai green chicken Curry, served with steamed rice",
-    zh:"泰式綠咖哩雞,附白飯(蒸飯)"},
-   {name:"TORI KATSU PLUS", price:"18€",
-    it:"Pollo in crosta di panko con salsa al curry, servito con riso bianco",
-    en:"Panko crust chicken with curry sauce, served with white rice",
-    zh:"麵包粉酥炸雞排佐咖哩醬,附白飯"},
-   {name:"ENERGY BEEF", price:"22€",
-    it:"Tagliata di filetto di manzo con verdure, saltato al wok con salsa di fagioli neri e peperoncino cinese Tobanjan",
-    en:"Beef fillet stir fried with vegetables, black bean sauce and Chinese Tobanjan chili",
-    zh:"牛菲力切片炒時蔬,以豆豉醬與中式豆瓣辣椒大火快炒"},
+ {id:"zuppe", it:"Zuppe", en:"Soups", zh:"湯品", items:[
+  {name:"Miso Shiru", price:"€6", it:"Zuppa di miso con tofu e alghe wakame", en:"Miso soup with tofu and wakame seaweed", zh:"味噌湯,佐豆腐與海帶芽"},
+  {name:"Tom Kha Gai 🌶", price:"€13", it:"Zuppa tradizionale tailandese con latte di cocco, pollo e verdure al profumo di menta", en:"Traditional Thai soup with coconut milk, chicken and vegetables, with a scent of mint", zh:"泰式椰奶雞肉蔬菜湯,帶薄荷香"},
+  {name:"Tom Yum Kung 🌶🌶", price:"€15", it:"Zuppa tipica tailandese con frutti di mare, profumata con lemongrass, zenzero, menta e coriandolo", en:"Traditional Thai soup with seafood, scented with lemongrass, ginger, mint and coriander", zh:"泰式海鮮酸辣湯,帶香茅、薑、薄荷與香菜"},
  ]},
- {it:"TEMAKI", en:"Temaki", zh:"手捲", cols:2, items:[
-   {name:"SALMONE E AVOCADO", price:"8€", it:"Salmone e avocado", en:"Salmon and avocado", zh:"鮭魚酪梨"},
-   {name:"TONNO PICCANTE", price:"9€", it:"Tonno piccante", en:"Spicy Tuna", zh:"辣鮪魚"},
-   {name:"TONNO E AVOCADO", price:"9€", it:"Tonno e avocado", en:"Tuna and avocado", zh:"鮪魚酪梨"},
-   {name:"TEMPURA", price:"8€", it:"Tempura di gamberi, maionese e salsa teriyaki", en:"Shrimp tempura, mayo & teriyaki sauce", zh:"天婦羅炸蝦、美乃滋與照燒醬"},
-   {name:"CALIFORNIA", price:"7€", it:"California", en:"California roll", zh:"加州手捲"},
-   {name:"SALMONE PICCANTE", price:"8€", it:"Salmone piccante", en:"Salmon Spicy", zh:"辣鮭魚"},
-   {name:"ANGUILLA E CETRIOLI", price:"9€", it:"Anguilla e cetrioli", en:"Eel and cucumber", zh:"鰻魚小黃瓜"},
+ {id:"tempura", it:"Tempura", en:"Tempura", zh:"天婦羅", items:[
+  {name:"Yasai Tempura", price:"€12", it:"Tempura di verdure di stagione (5 pezzi)", en:"Seasonal vegetable tempura (5 pieces)", zh:"當季時蔬天婦羅(5件)"},
+  {name:"Ebi Tempura", price:"€17", it:"Tempura di gamberoni (5 pezzi)", en:"Prawn tempura (5 pieces)", zh:"炸大蝦天婦羅(5件)"},
+  {name:"Tempura Tora Mix", price:"€22", it:"Assortimento misto di tempura con gamberoni e verdure", en:"Assortment of prawn and vegetable tempura", zh:"綜合天婦羅(大蝦+蔬菜)"},
  ]},
- {it:"SASHIMI", en:"Sashimi", zh:"生魚片(5 件 / 5 pezzi)", cols:2, items:[
-   {name:"IKA", price:"7€", it:"Calamaro", en:"Squid", zh:"花枝 / 魷魚"},
-   {name:"TORO", price:"13€", it:"Ventresca di tonno", en:"Bluefin tuna belly", zh:"黑鮪魚腹(大腹)"},
-   {name:"SHAKE", price:"9€", it:"Salmone", en:"Salmon", zh:"鮭魚"},
-   {name:"AKA EBI", price:"15€", it:"Gambero Rosso crudo", en:"Raw red shrimp", zh:"生紅蝦"},
-   {name:"SUZUKI", price:"8€", it:"Spigola", en:"Sea bass", zh:"鱸魚"},
-   {name:"HAMACHI", price:"14€", it:"Ricciola", en:"Yellowtail", zh:"鰤魚(青甘)"},
-   {name:"MAGURO", price:"12€", it:"Tonno", en:"Tuna", zh:"鮪魚"},
-   {name:"MISTO (12 PEZZI)", price:"30€", it:"Sashimi misto", en:"Assorted sashimi", zh:"綜合生魚片(12 件)"},
+ {id:"noodles", it:"Noodles", en:"Noodles", zh:"麵", items:[
+  {name:"Niku Yaki Soba", price:"€16", it:"Spaghetti giapponesi saltati al wok con pancetta di maiale e verdure croccanti", en:"Stir fried noodles with bacon and crispy vegetables", zh:"日式炒麵,豬五花培根與爽脆蔬菜"},
+  {name:"Kake Udon", price:"€16", it:"Spaghettoni di frumento con un brodo dashi delicato", en:"Japanese wheat spaghetti with a delicate dashi broth", zh:"烏龍麵,佐清爽柴魚高湯"},
+  {name:"Yaki Udon", price:"€16", it:"Spaghettoni di frumento saltati al wok con frutti di mare e verdure croccanti", en:"Japanese stir fried noodles with seafood and crispy vegetables", zh:"炒烏龍麵,海鮮與爽脆蔬菜"},
+  {name:"Tora Exotic Pad Thai", price:"€17", it:"Tagliatelle di riso tailandesi saltate al wok con gamberi, capesante e germogli di soia al profumo di menta e coriandolo", en:"Thai stir fried rice noodles with shrimp, scallops and beansprouts, with a scent of mint and coriander", zh:"泰式炒河粉,鮮蝦、干貝與豆芽,帶薄荷與香菜香"},
+  {name:"Tora Ramen", price:"€18", it:"Spaghetti giapponesi all'uovo in brodo di carne e soia, con uovo sodo marinato, germogli di soia e alghe", en:"Japanese egg noodles in a meat and soy broth with a marinated boiled egg, bean sprouts and seaweed", zh:"日式雞蛋拉麵,肉+醬油湯底,附溏心蛋、豆芽與海苔"},
+ ]},
+ {id:"riso", it:"Riso", en:"Rice", zh:"飯", items:[
+  {name:"Riso al Vapore", price:"€4", en:"Steamed rice", zh:"蒸白飯"},
+  {name:"Yakimeshi", price:"€15", it:"Riso saltato al wok con gamberi e verdure croccanti", en:"Stir fried rice with shrimp and crispy vegetables", zh:"鮮蝦蔬菜炒飯"},
+ ]},
+ {id:"pesce", it:"Pesce", en:"Fish", zh:"魚料理", items:[
+  {name:"Shake Teriyaki", price:"€17", it:"Salmone al forno servito con salsa teriyaki", en:"Grilled salmon served with teriyaki sauce", zh:"照燒烤鮭魚"},
+  {name:"Aromatic Ocean 🌶🌶", price:"€20", it:"Gamberi e capesante stufate nel latte di cocco e curry rosso tailandese, al profumo di lemongrass e foglie di mandarino, servito con riso", en:"Stewed prawns and scallops in coconut milk and Thai red curry, with a scent of lemongrass and tangerine leaves, served with rice", zh:"椰奶泰式紅咖哩燉蝦與干貝,帶香茅與橘葉香,附白飯"},
+  {name:"Maguro Tataki", price:"€22", it:"Filetto di tonno leggermente scottato con salsa al sesamo bianco e tartufo nero", en:"Tuna fillet slightly flame-seared with white sesame and black truffle sauce", zh:"微炙鮪魚排,佐白芝麻與黑松露醬"},
+  {name:"Black Cod Saikyo Yaki", price:"€30", it:"Filetto pregiato di merluzzo nero dell'Alaska marinato con miso bianco e yuzu, cotto al forno su foglie di magnolia", en:"The finest fillet of Alaskan black cod, baked with white miso and yuzu on magnolia leaves", zh:"阿拉斯加黑鱈魚菲力,以白味噌與柚子醃製,於木蘭葉上爐烤"},
+ ]},
+ {id:"carne", it:"Carne", en:"Meat", zh:"肉類", items:[
+  {name:"Tora Chicken", price:"€17", it:"Pollo teriyaki cotto al forno, marinato con zenzero, anice stellato e salsa di soia", en:"Oven baked teriyaki chicken, marinated with ginger, star anise and soy sauce", zh:"爐烤照燒雞,以薑、八角與醬油醃製"},
+  {name:"Thai Angry Bird", price:"€18", it:"Pollo al curry verde tailandese servito con riso al vapore", en:"Thai green chicken curry, served with steamed rice", zh:"泰式綠咖哩雞,附白飯"},
+  {name:"Tori Katsu Plus", price:"€18", it:"Pollo in crosta di panko con salsa al curry, servito con riso bianco", en:"Panko crust crispy chicken with curry sauce, served with white rice", zh:"酥炸麵包粉雞排佐咖哩醬,附白飯"},
+  {name:"Energy Beef", price:"€22", it:"Tagliata di filetto di manzo con verdure, saltato al wok con salsa di fagioli neri e peperoncino cinese tobanjan", en:"Beef fillet stir fried with vegetables, black bean sauce and Chinese Tobanjan chili", zh:"牛菲力切片炒時蔬,以豆豉醬與中式豆瓣辣椒快炒"},
+ ]},
+ {id:"sashimi", it:"Sashimi (5 pezzi)", en:"Sashimi (5 pieces)", zh:"生魚片(5件)", items:[
+  {name:"Ika", price:"€7", it:"Calamaro", en:"Squid", zh:"花枝(魷魚)"},
+  {name:"Shake", price:"€9", it:"Salmone", en:"Salmon", zh:"鮭魚"},
+  {name:"Suzuki", price:"€8", it:"Spigola", en:"Sea bass", zh:"鱸魚"},
+  {name:"Maguro", price:"€12", it:"Tonno", en:"Tuna", zh:"鮪魚"},
+  {name:"Toro", price:"€13", it:"Ventresca di tonno", en:"Bluefin tuna belly", zh:"黑鮪魚腹"},
+  {name:"Aka Ebi", price:"€15", it:"Gambero rosso crudo", en:"Raw red shrimp", zh:"生紅蝦"},
+  {name:"Hamachi", price:"€14", it:"Ricciola", en:"Yellowtail", zh:"鰤魚(青甘)"},
+  {name:"Misto (12 pezzi)", price:"€30", it:"Sashimi misto", en:"Assorted sashimi", zh:"綜合生魚片(12件)"},
+ ]},
+ {id:"nigiri", it:"Nigiri (2 pezzi)", en:"Nigiri (2 pieces)", zh:"握壽司(2貫)", items:[
+  {name:"Shake", price:"€5", it:"Salmone", en:"Salmon", zh:"鮭魚"},
+  {name:"Shake Aburi", price:"€6", it:"Salmone scottato con salsa teriyaki Tora", en:"Seared salmon with Tora teriyaki sauce", zh:"炙燒鮭魚,佐 Tora 照燒醬"},
+  {name:"Maguro", price:"€7", it:"Tonno", en:"Tuna", zh:"鮪魚"},
+  {name:"Suzuki", price:"€6", it:"Spigola", en:"Sea bass", zh:"鱸魚"},
+  {name:"Yude Ebi", price:"€6", it:"Gambero cotto", en:"Cooked shrimp", zh:"熟蝦"},
+  {name:"Ika", price:"€7", it:"Calamaro", en:"Squid", zh:"花枝"},
+  {name:"Hotate", price:"€8", it:"Capesante", en:"Scallops", zh:"干貝"},
+  {name:"Toro", price:"€9", it:"Ventresca di tonno", en:"Bluefin tuna belly", zh:"黑鮪魚腹"},
+  {name:"Toro Aburi", price:"€9", it:"Ventresca di tonno scottata con salsa teriyaki", en:"Seared tuna belly with teriyaki sauce", zh:"炙燒鮪魚腹,佐照燒醬"},
+  {name:"Aka Ebi", price:"€9", it:"Gambero rosso crudo", en:"Raw red shrimp", zh:"生紅蝦"},
+  {name:"Unagi", price:"€8", it:"Anguilla", en:"Eel", zh:"鰻魚"},
+  {name:"Hamachi", price:"€9", it:"Ricciola", en:"Yellowtail", zh:"鰤魚"},
+  {name:"Misto (7 pezzi)", price:"€24", it:"Nigiri misti", en:"Assorted Nigiri", zh:"綜合握壽司(7貫)"},
+ ]},
+ {id:"hosomaki", it:"Hosomaki (8 pezzi)", en:"Hosomaki (8 pieces)", zh:"細捲(8件)", items:[
+  {name:"Kappa", price:"€5", it:"Cetriolo", en:"Cucumber", zh:"小黃瓜"},
+  {name:"Avocado", price:"€6", en:"Avocado", zh:"酪梨"},
+  {name:"Shake", price:"€7", it:"Salmone", en:"Salmon", zh:"鮭魚"},
+  {name:"Salmone Piccante 🌶", price:"€8", en:"Spicy salmon", zh:"辣鮭魚"},
+  {name:"Salmone & Avocado", price:"€8", en:"Salmon and avocado", zh:"鮭魚酪梨"},
+  {name:"Calamaro & Ikura", price:"€8", it:"Calamaro, ikura (uova di salmone) e cetriolo", en:"Squid, ikura (salmon roe) and cucumber", zh:"花枝、鮭魚卵與小黃瓜"},
+  {name:"Maguro", price:"€8", it:"Tonno", en:"Tuna", zh:"鮪魚"},
+  {name:"Tonno Piccante 🌶", price:"€9", en:"Spicy tuna", zh:"辣鮪魚"},
+  {name:"Hamachi", price:"€9", it:"Ricciola", en:"Yellowtail", zh:"鰤魚"},
+  {name:"Hosomaki in Tempura", price:"€9", it:"Hosomaki fritto in tempura con salmone", en:"Tempura fried hosomaki with salmon", zh:"天婦羅炸細捲(鮭魚)"},
+  {name:"Ventresca di Tonno & Erba Cipollina", price:"€10", en:"Bluefin tuna belly and chives", zh:"黑鮪魚腹與細香蔥"},
+  {name:"Gamberi Rossi & Avocado", price:"€11", en:"Red shrimp and avocado", zh:"紅蝦酪梨"},
+ ]},
+ {id:"temaki", it:"Temaki", en:"Temaki", zh:"手捲", items:[
+  {name:"Salmone e Avocado", price:"€8", en:"Salmon and avocado", zh:"鮭魚酪梨"},
+  {name:"Tonno e Avocado", price:"€9", en:"Tuna and avocado", zh:"鮪魚酪梨"},
+  {name:"California", price:"€7", en:"California", zh:"加州手捲"},
+  {name:"Salmone Piccante 🌶", price:"€8", en:"Spicy salmon", zh:"辣鮭魚"},
+  {name:"Tonno Piccante 🌶", price:"€9", en:"Spicy tuna", zh:"辣鮪魚"},
+  {name:"Tempura", price:"€8", it:"Tempura di gamberi, maionese e salsa teriyaki", en:"Shrimp tempura, mayonnaise and teriyaki sauce", zh:"天婦羅炸蝦、美乃滋與照燒醬"},
+  {name:"Anguilla e Cetrioli", price:"€9", en:"Eel and cucumber", zh:"鰻魚小黃瓜"},
+ ]},
+ {id:"classici", it:"Uramaki · Roll Classici (8 pezzi)", en:"Classic Rolls (8 pieces)", zh:"經典捲(8件)", items:[
+  {name:"California", price:"€14", it:"Gambero cotto, polpa di granchio, avocado, cetriolo e maionese", en:"Cooked shrimp, crab meat, avocado, cucumber and mayonnaise", zh:"熟蝦、蟹肉、酪梨、小黃瓜與美乃滋"},
+  {name:"Salmone & Avocado", price:"€14", en:"Salmon and avocado", zh:"鮭魚酪梨"},
+  {name:"Tonno & Avocado", price:"€15", en:"Tuna and avocado", zh:"鮪魚酪梨"},
+  {name:"Tonno Piccante 🌶", price:"€15", it:"Tonno e cetrioli", en:"Spicy tuna and cucumber", zh:"辣鮪魚與小黃瓜"},
+  {name:"Ebi Ten", price:"€16", it:"Tempura di gambero, cetriolo, maionese e salsa teriyaki", en:"Shrimp tempura, cucumber, mayonnaise and teriyaki sauce", zh:"天婦羅炸蝦、小黃瓜、美乃滋與照燒醬"},
+  {name:"Doppio", price:"€17", it:"Salmone, avocado e uova di pesce volante, con maionese, avvolti con salmone", en:"Salmon, avocado and flying fish roe, with mayonnaise, wrapped in salmon", zh:"鮭魚、酪梨與飛魚卵、美乃滋,外層包鮭魚"},
+  {name:"Futomaki in Tempura", price:"€18", it:"Futomaki fritto in tempura con salmone, gambero cotto, avocado e polpa di granchio", en:"Tempura fried futomaki with salmon, cooked shrimp, avocado and crab meat", zh:"天婦羅炸粗捲:鮭魚、熟蝦、酪梨與蟹肉"},
+  {name:"Rainbow", price:"€20", it:"Polpa di granchio condita con maionese, avocado e cetriolo, avvolti con gambero cotto, tonno, salmone, spigola e avocado", en:"Crab meat, mayonnaise, avocado and cucumber, wrapped with cooked shrimp, tuna, salmon, sea bass and avocado", zh:"蟹肉美乃滋、酪梨與小黃瓜,外層鋪熟蝦、鮪魚、鮭魚、鱸魚與酪梨"},
+ ]},
+ {id:"creativi", it:"Uramaki · Roll Creativi (8 pezzi)", en:"Creative Rolls (8 pieces)", zh:"創意捲(8件)", items:[
+  {name:"Esplosione 🌶", price:"€20", it:"Hosomaki avvolto con pasta kataifi con avocado, salmone, top di gamberi fritti conditi con salsa piccante e scaglie di mandorle", en:"Hosomaki wrapped with kataifi paste with avocado, salmon, topped with fried prawns with hot sauce and almond shavings", zh:"細捲裹 kataifi 酥絲,內含酪梨、鮭魚;上放辣醬炸蝦與杏仁片"},
+  {name:"Vulcano", price:"€20", it:"Uramaki con salmone condito con salsa shiracha e avocado, avvolto con salmone scottato, top di formaggio fresco e julienne fritta di patate", en:"Uramaki with salmon, with shiracha sauce and avocado, wrapped with seared salmon, topped with cream cheese and fried shredded potatoes", zh:"加州捲佐是拉差醬與酪梨,外層炙燒鮭魚;上放奶油乳酪與炸馬鈴薯絲"},
+  {name:"Yume - Sogno", price:"€20", it:"Uramaki con gamberi in tempura, top di tartare di salmone allo yuzu e nuvolette di gamberi", en:"Uramaki with prawns in tempura, topped with yuzu and shrimp chips", zh:"天婦羅鮮蝦加州捲,上放柚子鮭魚塔塔與蝦餅"},
+  {name:"Godfather 🌶", price:"€22", it:"Uramaki con tonno piccante e avocado in crosta di pistacchio, top di tartare di tonno con salsa piccante", en:"Uramaki with spicy tuna and pistachio crust and avocado, topped with tuna tartare with spicy sauce", zh:"辣鮪魚酪梨加州捲裹開心果脆殼;上放辣味鮪魚塔塔"},
+ ]},
+ {id:"gunkan", it:"Sushi Jò · Gunkan (2 pezzi)", en:"Sushi Jò · Gunkan (2 pieces)", zh:"壽司上 · 軍艦(2貫)", items:[
+  {name:"Gunkan Tobiko", price:"€8", it:"Uova di pesce volante e lime", en:"Flying fish roe and lime", zh:"飛魚卵與萊姆"},
+  {name:"Gunkan Ikura", price:"€10", it:"Uova di salmone", en:"Salmon roe", zh:"鮭魚卵"},
+  {name:"Sushi Jò Salmone", price:"€8", it:"Tartare di salmone e ikura (uova di salmone), avvolto con salmone", en:"Salmon tartare with ikura (salmon roe), wrapped in salmon", zh:"鮭魚塔塔與鮭魚卵,外層包鮭魚"},
+  {name:"Sushi Jò Salmone Piccante 🌶", price:"€9", it:"Salmone marinato con maionese piccante", en:"Salmon marinated with a spicy mayonnaise", zh:"醃鮭魚,佐辣美乃滋"},
+  {name:"Sushi Jò Maguro", price:"€11", it:"Tonno e tartare di tonno", en:"Tuna and tuna tartare", zh:"鮪魚與鮪魚塔塔"},
+  {name:"Sushi Jò Tonno Piccante 🌶", price:"€11", it:"Tonno avvolto con tonno, top di tartare di tonno con salsa piccante", en:"Tuna wrapped in tuna, topped with a tuna tartare with a spicy sauce", zh:"鮪魚外層包鮪魚,上放辣味鮪魚塔塔"},
+ ]},
+ {id:"chirashi", it:"Chirashi", en:"Chirashi", zh:"散壽司", items:[
+  {name:"Salmone e Ikura", price:"€22", it:"Salmone e ikura (uova di salmone)", en:"Salmon and ikura (salmon roe)", zh:"鮭魚與鮭魚卵"},
+  {name:"Misto", price:"€25", it:"Salmone, tonno, spigola, anguilla, gambero cotto, gambero rosso crudo, capesante e ikura (uova di salmone)", en:"Assorted fish chirashi with salmon, tuna, sea bass, eel, cooked shrimp, raw red shrimp, scallops and ikura (salmon roe)", zh:"綜合散壽司:鮭魚、鮪魚、鱸魚、鰻魚、熟蝦、生紅蝦、干貝與鮭魚卵"},
+ ]},
+ {id:"combo", it:"Sashimi, Nigiri & Rolls", en:"Sashimi, Nigiri & Rolls", zh:"綜合拼盤", items:[
+  {name:"Karate (12 pezzi)", price:"€35", it:"Sashimi 4 pezzi, Nigiri 4 pezzi, Rolls 4 pezzi", en:"Sashimi 4 pieces, Nigiri 4 pieces, Rolls 4 pieces", zh:"生魚片4 + 握壽司4 + 捲物4"},
+  {name:"Judo (24 pezzi)", price:"€50", it:"Sashimi 6 pezzi, Nigiri 8 pezzi, Rolls 10 pezzi", en:"Sashimi 6 pieces, Nigiri 8 pieces, Rolls 10 pieces", zh:"生魚片6 + 握壽司8 + 捲物10"},
+  {name:"Sumo (40 pezzi)", price:"€85", it:"Sashimi 12 pezzi, Nigiri 12 pezzi, Rolls 16 pezzi", en:"Sashimi 12 pieces, Nigiri 12 pieces, Rolls 16 pieces", zh:"生魚片12 + 握壽司12 + 捲物16"},
+ ]},
+ {id:"insalate", it:"Insalate", en:"Salads", zh:"沙拉", items:[
+  {name:"Insalata Fried Tofu (vg)", price:"€13", it:"Tofu fritto, avocado ed erbe giapponesi", en:"Fried tofu with avocado and Japanese herbs (vg)", zh:"炸豆腐、酪梨與日式香草(全素)"},
+  {name:"Insalata di Papaya Verde con Arachidi", price:"€15", it:"Papaya verde grattugiata, pomodoro, carota, lime, tamarindo, salsa di soia, sale marino e zucchero, avocado", en:"Shredded green papaya, tomato, carrot, lime, avocado, tamarind, mixed nuts, thin soy, sea salt and sugar", zh:"青木瓜絲、番茄、紅蘿蔔、萊姆、酪梨、羅望子、綜合堅果、薄鹽醬油、海鹽與糖"},
+ ]},
+ {id:"dolci", it:"Dolci", en:"Desserts", zh:"甜點", items:[
+  {name:"Shiro", price:"€7", it:"Gelato di riso con latte di cocco e purea di mango", en:"Rice ice cream with coconut milk and mango puree", zh:"米冰淇淋,佐椰奶與芒果泥"},
+  {name:"Macha", price:"€7", it:"Gelato al tè verde con azuki", en:"Green tea ice cream with azuki", zh:"抹茶冰淇淋,佐紅豆"},
+  {name:"Mochi", price:"2件 €6 / 3件 €8", it:"Mochi ripieni di gelato, a scelta: vaniglia, sesamo nero, tè verde o misti", en:"Mochi filled with your choice of ice cream: vanilla, black sesame, green tea or mixed", zh:"冰淇淋麻糬,口味可選:香草、黑芝麻、抹茶或綜合"},
+  {name:"Tora-Misù", price:"€8", it:"Tiramisù al mango", en:"Tiramisù with mango", zh:"芒果提拉米蘇"},
+  {name:"Katban", price:"€10", it:"Banana avvolta con pasta kataifi, con cocco, granella di pistacchio, servita con Nutella e gelato di riso", en:"Banana wrapped in kataifi pastry, with coconut, pistachio grains, served with Nutella and rice ice cream", zh:"香蕉裹 kataifi 酥絲,佐椰子、開心果碎,附 Nutella 與米冰淇淋"},
+  {name:"Chokoreto", price:"€10", it:"Tortino al cioccolato caldo con zenzero e cannella, servito con gelato di riso", en:"Chocolate cake with molten chocolate filling with ginger and cinnamon, served with rice ice cream", zh:"熔岩巧克力蛋糕(含薑與肉桂),附米冰淇淋"},
+ ]},
+ {id:"bollicine", it:"Bollicine", en:"Sparkling Wines", zh:"氣泡酒(杯 / 瓶)", items:[
+  {name:"Prosecco Itinera DOC Treviso", price:"杯€7 / 瓶€25", it:"Veneto, Glera, 11%", zh:"威尼托 · Glera · 11%"},
+  {name:"Moscato d'Asti Gianni Doglia", price:"€32", it:"Piemonte, Moscato, 5%", zh:"皮埃蒙特 · 蜜思嘉 · 5%"},
+  {name:"Merotto Rosè Brut Grani di Nero", price:"€33", it:"Veneto, Pinot Nero, 11.5%", zh:"威尼托 · 黑皮諾 · 11.5%"},
+  {name:"Trento DOC Ferrari", price:"€40", it:"Trentino, Chardonnay, 12.5%", zh:"特倫提諾 · 夏多內 · 12.5%"},
+  {name:"Champagne Moët Chandon", price:"€100", it:"Francia, Pinot Nero, Pinot Meunier, Chardonnay, 12%", zh:"法國香檳 · 12%"},
+  {name:"Champagne Veuve Clicquot", price:"€110", it:"Francia, Pinot Nero, Pinot Meunier, Chardonnay, 12%", zh:"法國香檳(凱歌)· 12%"},
+  {name:"Champagne Dom Perignon", price:"€360", it:"Francia, Chardonnay, Pinot Nero, 12.5%", zh:"法國香檳(香檳王)· 12.5%"},
+ ]},
+ {id:"bianchi", it:"Vini Bianchi", en:"White Wines", zh:"白酒(杯 / 瓶)", items:[
+  {name:"Trebbiano d'Abruzzo Talamonti Tebi", price:"杯€7 / 瓶€24", it:"Abruzzo, Trebbiano, 12%", zh:"阿布魯佐 · Trebbiano · 12%"},
+  {name:"Chardonnay Ilauri Tavo", price:"杯€7 / 瓶€25", it:"Veneto, Chardonnay, 12.5%", zh:"威尼托 · 夏多內 · 12.5%"},
+  {name:"Oppidum Moscato Terracina", price:"杯€7 / 瓶€27", it:"Lazio, Moscato, 13%", zh:"拉吉歐 · 蜜思嘉 · 13%"},
+  {name:"Pinot Grigio Ilauri", price:"杯€8 / 瓶€28", it:"Veneto, Pinot Grigio, 12.5%", zh:"威尼托 · 灰皮諾 · 12.5%"},
+  {name:"Pecorino Talamonti Trabocchetto", price:"杯€8 / 瓶€29", it:"Abruzzo, Pecorino, 14%", zh:"阿布魯佐 · Pecorino · 14%"},
+  {name:"Ribolla Gialla Vigna del Lauro", price:"€26", it:"Veneto, Ribolla Gialla, 12.5%", zh:"威尼托 · Ribolla Gialla · 12.5%"},
+  {name:"Falanghina Capranera", price:"€28", it:"Campania, Falanghina, 12.5%", zh:"坎帕尼亞 · Falanghina · 12.5%"},
+  {name:"Sauvignon Pietra Pinta", price:"€29", it:"Lazio, Sauvignon, 13.5%", zh:"拉吉歐 · 白蘇維翁 · 13.5%"},
+  {name:"Vermentino Audarya", price:"€30", it:"Sardegna, Vermentino, 12.5%", zh:"薩丁尼亞 · Vermentino · 12.5%"},
+  {name:"Frascati Philein Capodarco Bio DOCG", price:"€32", it:"Lazio, Malvasia Puntinata, Malvasia di Candia, Trebbiano, 13%", zh:"拉吉歐 · 有機 · 13%"},
+  {name:"Gewurztraminer Roeno Gipfel", price:"€33", it:"Trentino, Gewurztraminer, 13%", zh:"特倫提諾 · 格烏茲塔明那 · 13%"},
+  {name:"Fiano d'Avellino Mito", price:"€34", it:"Campania, Fiano, 13.5%", zh:"坎帕尼亞 · Fiano · 13.5%"},
+  {name:"Chablis Domaine Hamelin", price:"€35", it:"Francia, Chardonnay, 12.5%", zh:"法國夏布利 · 夏多內 · 12.5%"},
+ ]},
+ {id:"rosati", it:"Vini Rosati", en:"Rosé Wines", zh:"粉紅酒(杯 / 瓶)", items:[
+  {name:"Cerasuolo Talamonti", price:"杯€8 / 瓶€27", it:"Abruzzo, Cerasuolo, 13%", zh:"阿布魯佐 · Cerasuolo · 13%"},
+  {name:"Rosato Puglia a Mano Imprint", price:"€30", it:"Puglia, Primitivo, 12% (Vegan)", zh:"普利亞 · Primitivo · 12%(全素)"},
+ ]},
+ {id:"rossi", it:"Vini Rossi", en:"Red Wines", zh:"紅酒(杯 / 瓶)", items:[
+  {name:"Montepulciano Moda Talamonti", price:"杯€7 / 瓶€27", it:"Abruzzo, Montepulciano, 13.5%", zh:"阿布魯佐 · Montepulciano · 13.5%"},
+  {name:"Chianti DOCG Biologico Superiore Buccianera", price:"杯€7 / 瓶€28", it:"Toscana, Sangiovese, Canaiolo, 14%", zh:"托斯卡尼 · 奇揚地有機 · 14%"},
+  {name:"Nero d'Avola Judeka", price:"杯€8 / 瓶€36", it:"Sicilia, Nero d'Avola, 14.5%", zh:"西西里 · Nero d'Avola · 14.5%"},
+  {name:"Valpolicella Ripasso Ca Rugate", price:"€42", it:"Veneto, Corvina, Corvinone, Rondinella, 14.5%", zh:"威尼托 · Valpolicella Ripasso · 14.5%"},
+  {name:"Rosso Montalcino Val di Piatta", price:"€45", it:"Toscana, Sangiovese, Canaiolo Nero, Mammolo, 13%", zh:"托斯卡尼 · 山吉歐維榭 · 13%"},
+  {name:"Brunello di Montalcino Verbena", price:"€69", it:"Toscana, Sangiovese, 14%", zh:"托斯卡尼 · Brunello · 14%"},
+  {name:"Tignanello", price:"€180", it:"Toscana, Cabernet Franc, Sangiovese, 14%", zh:"托斯卡尼 · 名釀 Tignanello · 14%"},
+ ]},
+ {id:"sake", it:"Sakè", en:"Sake", zh:"清酒", items:[
+  {name:"Sake Kinro (杯 / glass)", price:"€10", zh:"店家清酒(單杯)"},
+  {name:"Sake Kinkon Honjozo Chokara", price:"€40", it:"Sake molto secco, servito freddo, con ghiaccio o riscaldato (max 50°). Vol 15%", en:"Very dry sake; serve cold, on ice, or warmed (max 50°). 15%", zh:"極辛口清酒;可冰鎮、加冰或溫熱(最高50°)· 15%"},
+  {name:"Sake Taiyo Junmai Hakutsuru", price:"€60", it:"Riso takanenishiki coltivato in Giappone; aroma fruttato ed elegante, gusto delicato. Vol 15%", en:"Made with Takanenishiki rice; fruity, elegant aroma, delicate taste. 15%", zh:"日本 Takanenishiki 米釀;果香優雅、口感細緻 · 15%"},
+  {name:"Sake Taiyo Junmai", price:"€60", it:"Riso takanenishiki coltivato in Giappone; aroma fruttato ed elegante, gusto delicato. Vol 15%", en:"Made with Takanenishiki rice; fruity, elegant aroma, delicate taste. 15%", zh:"日本 Takanenishiki 米釀;果香優雅、口感細緻 · 15%"},
+  {name:"Sake Azure Tosatsuru", price:"€65", it:"Sakè pregiato da riso Yamada Nishiki e acqua di profondità oceanica; fruttato, retrogusto di pera, fresco e secco. Servire freddo", en:"Premium sake from Yamada Nishiki rice and deep-ocean water; fruity, pear finish, fresh and dry. Serve cold", zh:"頂級清酒(山田錦米+深海水);果香、梨韻、清爽偏辛;冰飲"},
+  {name:"Sake Kubota Senju", price:"€70", it:"Gentile ed elegante, con sentore di spezie, delicatamente aromatizzato, finale pulito", en:"Gentle and elegant, with a hint of spice, delicately aromatic, clean finish", zh:"柔順優雅、帶香料氣息、尾韻乾淨"},
+ ]},
+ {id:"cocktails", it:"Cocktails", en:"Cocktails", zh:"調酒", items:[
+  {name:"Aperol Spritz", price:"€9", zh:"艾普羅氣泡調酒"},
+  {name:"Campari Spritz", price:"€9", zh:"金巴利氣泡調酒"},
+  {name:"Bellini", price:"€9", zh:"貝里尼(水蜜桃氣泡)"},
+  {name:"Rossini", price:"€9", zh:"羅西尼(草莓氣泡)"},
+  {name:"Gin Tanqueray Tonic", price:"€10", zh:"坦奎利琴通寧"},
+  {name:"Gin Etsu Tonic", price:"€12", zh:"Etsu 琴通寧"},
+  {name:"Gin Jinzu Tonic", price:"€12", zh:"Jinzu 琴通寧"},
+  {name:"Vodka Absolut Tonic", price:"€10", zh:"絕對伏特加通寧"},
+  {name:"Vodka Absolut Lemon", price:"€10", zh:"絕對伏特加檸檬"},
+  {name:"Vodka Belvedere Tonic / Lemon", price:"€12", zh:"雪樹伏特加 通寧/檸檬"},
+  {name:"Vodka Grey Goose Tonic / Lemon", price:"€12", zh:"灰雁伏特加 通寧/檸檬"},
+ ]},
+ {id:"birre", it:"Birre", en:"Beers", zh:"啤酒", items:[
+  {name:"Moretti (33cl)", price:"€6", zh:"莫雷蒂"},
+  {name:"Birra Corona (33cl)", price:"€6", zh:"可樂娜"},
+  {name:"Asahi", price:"€7", zh:"朝日"},
+  {name:"Sapporo", price:"€7", zh:"札幌"},
+  {name:"Paulaner (50cl)", price:"€7", zh:"保拉納"},
+  {name:"Birra Kizakura Kyoto Beer (33cl)", price:"€9", zh:"黃櫻京都啤酒"},
+ ]},
+ {id:"drinks", it:"Bibite", en:"Drinks", zh:"軟性飲料", items:[
+  {name:"Acqua", price:"€3", en:"Water", zh:"礦泉水"},
+  {name:"Coca Cola (33cl)", price:"€5", zh:"可口可樂"},
+  {name:"Coca Zero (33cl)", price:"€5", zh:"零卡可樂"},
+  {name:"Fanta (33cl)", price:"€5", zh:"芬達"},
+  {name:"Sprite (33cl)", price:"€5", zh:"雪碧"},
+  {name:"Ice Tea Gelsomino", price:"€5", en:"Jasmine iced tea", zh:"茉莉冰茶"},
+  {name:"Fruit Juice", price:"€5", zh:"果汁"},
+ ]},
+ {id:"caffe", it:"Caffè", en:"Coffee", zh:"咖啡", items:[
+  {name:"Espresso", price:"€2,50", zh:"濃縮咖啡"},
+  {name:"Cappuccino", price:"€4", zh:"卡布奇諾"},
+  {name:"Caffè Latte", price:"€4", zh:"拿鐵"},
  ]},
 ];
 
@@ -149,14 +291,12 @@ function itemHTML(x){
     ${x.zh?`<div class="ln"><span class="lang">中</span><span class="zh">${x.zh}</span></div>`:""}
   </div>`;
 }
-document.getElementById("menu").innerHTML = MENU.map(sec=>`
-  <section>
-    <div class="sec-head">
-      <div class="s-main"><span class="s-it">${sec.it}</span><span class="s-en">${sec.en}</span></div>
-      ${sec.zh?`<div class="s-zh">${sec.zh}</div>`:""}
-    </div>
-    <div class="${sec.cols===2?"grid2":"items"}">${sec.items.map(itemHTML).join("")}</div>
+document.getElementById("menu").innerHTML = MENU.map(s=>`
+  <section id="${s.id}">
+    <div class="sec-head"><div class="s-main"><span class="s-it">${s.it}</span><span class="s-en">${s.en}</span></div><div class="s-zh">${s.zh}</div></div>
+    <div class="items">${s.items.map(itemHTML).join("")}</div>
   </section>`).join("");
+document.getElementById("toc").innerHTML = MENU.map(s=>`<a href="#${s.id}">${s.zh.split(" · ")[0].replace(/\(.*\)/,"")}</a>`).join("");
 </script>
 </body>
 </html>
